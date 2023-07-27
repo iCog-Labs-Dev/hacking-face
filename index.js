@@ -45,7 +45,7 @@ app.post('/', (req, res) => {
         res.send(JSON.stringify(e))
     }
 })
-const port = process.env.port || 3434
+const port = process.env.PORT || 3434
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
