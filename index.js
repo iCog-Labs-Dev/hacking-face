@@ -6,7 +6,9 @@ const app = express()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
+app.get('/',(req,res)=>{
+    res.send('ok...please send a post request')
+})
 app.post('/', (req, res) => {
     const query = req.body.query;
     const link = req.body.link;
