@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # exit on errorset -o errexit
-yarn
+# yarn
+npm i
 # npm run build # uncomment if required
 
 # Store/pull Puppeteer cache with build cache
