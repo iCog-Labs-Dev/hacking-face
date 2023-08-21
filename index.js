@@ -52,7 +52,7 @@ app.post('/embed', (req, res) => {
     try {
 
         (async () => {
-            const browser = await puppeteer.launch();
+            const browser = await puppeteer.launch({ headless: true });
             const page = await browser.newPage();
             console.log("Loading page... (might fail)");
             await page.goto(link);
