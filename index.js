@@ -52,9 +52,9 @@ app.post('/embed', (req, res) => {
     try {
 
         (async () => {
-            const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
+            const browser = await puppeteer.launch();
             const page = await browser.newPage();
-            console.log("Loading page...");
+            console.log("Loading page... (might fail)");
             await page.goto(link);
             // await page.goto('https://huggingface.co/spaces/hesha/text-embeddings-transformers');
             // await page.goto('https://huggingface.co/spaces/tollan/instructor-embeddings');
@@ -73,7 +73,7 @@ app.post('/embed', (req, res) => {
             await frame.waitForSelector('#component-9')
             const button = await frame.$('#component-9');
             button.click()
-            console.log("Waiting for generated response...(might timeout)");
+            console.log("Waiting for generated response...");
 
             await frame.waitForSelector('.wrap.default.full.svelte-zlszon');
             console.log("Generating...");
